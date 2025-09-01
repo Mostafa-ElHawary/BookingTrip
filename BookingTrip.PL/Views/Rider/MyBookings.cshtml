@@ -1,0 +1,50 @@
+﻿@model IEnumerable<RideSharingApp.BLL.DTOs.BookingResponseDTO>
+
+@{
+    ViewData["Title"] = "My Bookings";
+}
+
+<h1>My Bookings</h1>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Trip ID</th>
+                <th>Pickup Location</th>
+                <th>Dropoff Location</th>
+                <th>Fare</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.TripId</td>
+                    <td>@booking.PickupLocation</td>
+                    <td>@booking.DropoffLocation</td>
+                    <td>@booking.Fare</td>
+                    <td>@booking.Status</td>
+                    <td>
+                        @if (booking.Status == RideSharingApp.DAL.Entities.BookingStatus.Completed)
+                        {
+                            <form asp-action="RateDriver" method="post">
+                                <input type="hidden" name="BookingId" value="@booking.Id" />
+                                <input type="number" name="Score" min="1" max="5" placeholder="Score (1-5)" class="form-control-sm" />
+                                <input type="text" name="Feedback" placeholder="Feedback" class="form-control-sm" />
+                                <button type="submit" class="btn btn-success btn-sm">Rate Driver</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No bookings found.</p>
+}

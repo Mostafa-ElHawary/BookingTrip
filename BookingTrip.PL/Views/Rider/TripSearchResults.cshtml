@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RideSharingApp.BLL.DTOs.TripResponseDTO>
+
+@{
+    ViewData["Title"] = "Trip Search Results";
+}
+
+<h1>Trip Search Results</h1>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Driver ID</th>
+                <th>Start Location</th>
+                <th>End Location</th>
+                <th>Start Time</th>
+                <th>Available Seats</th>
+                <th>Suggested Fare</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trip in Model)
+            {
+                <tr>
+                    <td>@trip.DriverId</td>
+                    <td>@trip.StartLocation</td>
+                    <td>@trip.EndLocation</td>
+                    <td>@trip.StartTime</td>
+                    <td>@trip.AvailableSeats</td>
+                    <td>@trip.SuggestedFare</td>
+                    <td>
+                        <form asp-action="BookTrip" method="post">
+                            <input type="hidden" name="TripId" value="@trip.Id" />
+                            <input type="hidden" name="RiderId" value="1" /> {{-- TODO: Replace with actual logged-in RiderId --}}
+                            <input type="hidden" name="PickupLocation" value="@trip.StartLocation" /> {{-- TODO: Allow rider to specify --}}
+                            <input type="hidden" name="DropoffLocation" value="@trip.EndLocation" /> {{-- TODO: Allow rider to specify --}}
+                            <input type="hidden" name="Fare" value="@trip.SuggestedFare" /> {{-- This is the cash fare --}}
+                            <button type="submit" class="btn btn-primary btn-sm">Book Seat</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No trips found matching your criteria.</p>
+}
