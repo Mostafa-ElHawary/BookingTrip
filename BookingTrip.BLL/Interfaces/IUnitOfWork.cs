@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookingTrip.BLL.Interfaces.Repositories;
 using BookingTrip.DAL.Entities;
 
 namespace BookingTrip.BLL.Interfaces

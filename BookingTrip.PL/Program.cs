@@ -1,4 +1,6 @@
 using BookingTrip.BLL.Interfaces;
+using BookingTrip.BLL.Interfaces.Repositories;
+using BookingTrip.BLL.Interfaces.Services;
 using BookingTrip.BLL.Repositories;
 using BookingTrip.BLL.Services;
 using BookingTrip.BLL.UnitOfWork;
@@ -37,8 +39,8 @@ namespace BookingTrip.PL
             builder.Services.AddScoped<IUserService, UserService>();
 
             // Add Identity for authentication (simplified for now, full Identity setup would be more complex)
-            builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<AppDbContext>();
+            //builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
+            //    .AddEntityFrameworkStores<AppDbContext>();
 
             var app = builder.Build();
 

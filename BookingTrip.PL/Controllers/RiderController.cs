@@ -1,4 +1,5 @@
-﻿using BookingTrip.PL.Dtos;
+﻿using BookingTrip.BLL.Interfaces.Services;
+using BookingTrip.PL.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingTrip.PL.Controllers
@@ -15,12 +16,14 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpGet]
+        // هذا الإجراء يعرض نموذجًا للراكب للبحث عن رحلة.
         public IActionResult SearchTrips()
         {
             return View();
         }
 
         [HttpPost]
+        // هذا الإجراء يتعامل مع طلب البحث عن الرحلات، ويقوم بعرض النتائج.
         public async Task<IActionResult> SearchTrips(TripSearchDTO model)
         {
             if (ModelState.IsValid)
@@ -39,6 +42,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يتعامل مع طلب حجز مقعد في رحلة معينة.
         public async Task<IActionResult> BookTrip(BookingCreateDTO model)
         {
             if (ModelState.IsValid)
@@ -57,6 +61,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpGet]
+        // هذا الإجراء يعرض قائمة بجميع الحجوزات التي قام بها راكب معين.
         public async Task<IActionResult> MyBookings(int riderId)
         {
             var bookings = await _riderService.GetRiderBookingsAsync(riderId);
@@ -64,6 +69,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يسمح للراكب بطلب التقاطه من منتصف الطريق في رحلة جارية.
         public async Task<IActionResult> RequestMidRoutePickup(int tripId, int riderId, string pickupLocation, string dropoffLocation)
         {
             try
@@ -79,6 +85,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يتعامل مع تقييم الراكب للسائق بعد انتهاء الرحلة.
         public async Task<IActionResult> RateDriver(RatingCreateDTO model)
         {
             if (ModelState.IsValid)

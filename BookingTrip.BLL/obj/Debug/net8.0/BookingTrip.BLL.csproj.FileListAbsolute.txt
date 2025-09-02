@@ -1,0 +1,16 @@
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingTrip.BLL.csproj.AssemblyReference.cache
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingTrip.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingTrip.BLL.AssemblyInfoInputs.cache
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingTrip.BLL.AssemblyInfo.cs
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingTrip.BLL.csproj.CoreCompileInputs.cache
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingTrip.BLL.sourcelink.json
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\bin\Debug\net8.0\BookingTrip.BLL.deps.json
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\bin\Debug\net8.0\BookingTrip.BLL.dll
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\bin\Debug\net8.0\BookingTrip.BLL.pdb
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\bin\Debug\net8.0\BookingTrip.DAL.dll
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\bin\Debug\net8.0\BookingTrip.DAL.pdb
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingT.F17F9E8A.Up2Date
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingTrip.BLL.dll
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\refint\BookingTrip.BLL.dll
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\BookingTrip.BLL.pdb
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.BLL\obj\Debug\net8.0\ref\BookingTrip.BLL.dll

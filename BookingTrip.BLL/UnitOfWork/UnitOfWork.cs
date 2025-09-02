@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookingTrip.BLL.Interfaces;
+using BookingTrip.BLL.Interfaces.Repositories;
 using BookingTrip.BLL.Repositories;
 using BookingTrip.DAL.Data.Context;
 using BookingTrip.DAL.Entities;

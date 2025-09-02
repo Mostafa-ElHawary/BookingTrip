@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookingTrip.BLL.Interfaces;
+using BookingTrip.BLL.Interfaces.Services;
 using BookingTrip.DAL.Entities;
+using BookingTrip.PL.Dtos;
 
 namespace BookingTrip.BLL.Services
 {
@@ -20,7 +22,7 @@ namespace BookingTrip.BLL.Services
         public async Task<UserResponseDTO> RegisterUserAsync(UserCreateDTO userDto)
         {
             // Check if username or email already exists
-            var existingUser = await _unitOfWork.Users.FindAsync(u => u.UserName == userDto.Username || u.Email == userDto.Email);
+            var existingUser = await _unitOfWork.Users.FindAsync(u => u.Username == userDto.Username || u.Email == userDto.Email);
             if (existingUser.Any())
             {
                 throw new InvalidOperationException("Username or Email already registered.");
@@ -28,7 +30,7 @@ namespace BookingTrip.BLL.Services
 
             var user = new User
             {
-                UserName = userDto.Username,
+                Username = userDto.Username,
                 Email = userDto.Email,
                 Role = userDto.Role,
                 IsActive = true
@@ -44,7 +46,7 @@ namespace BookingTrip.BLL.Services
             return new UserResponseDTO
             {
                 Id = user.Id,
-                Username = user.UserName,
+                Username = user.Username,
                 Email = user.Email,
                 Role = user.Role,
                 IsActive = user.IsActive
@@ -62,7 +64,7 @@ namespace BookingTrip.BLL.Services
             return new UserResponseDTO
             {
                 Id = user.Id,
-                Username = user.UserName,
+                Username = user.Username,
                 Email = user.Email,
                 Role = user.Role,
                 IsActive = user.IsActive
@@ -80,7 +82,7 @@ namespace BookingTrip.BLL.Services
             return new UserProfileDTO
             {
                 Id = user.Id,
-                Username = user.UserName,
+                Username = user.Username,
                 Email = user.Email,
                 Role = user.Role,
                 IsActive = user.IsActive
@@ -95,7 +97,7 @@ namespace BookingTrip.BLL.Services
                 throw new KeyNotFoundException($"User with ID {userId} not found.");
             }
 
-            if (userDto.Username != null) user.UserName = userDto.Username;
+            if (userDto.Username != null) user.Username = userDto.Username;
             if (userDto.Email != null) user.Email = userDto.Email;
             if (userDto.IsActive != null) user.IsActive = userDto.IsActive.Value;
 
@@ -105,7 +107,7 @@ namespace BookingTrip.BLL.Services
             return new UserResponseDTO
             {
                 Id = user.Id,
-                Username = user.UserName,
+                Username = user.Username,
                 Email = user.Email,
                 Role = user.Role,
                 IsActive = user.IsActive

@@ -1,0 +1,15 @@
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\bin\Debug\net8.0\BookingTrip.DAL.deps.json
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\bin\Debug\net8.0\BookingTrip.DAL.runtimeconfig.json
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\bin\Debug\net8.0\BookingTrip.DAL.dll
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\bin\Debug\net8.0\BookingTrip.DAL.pdb
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.csproj.AssemblyReference.cache
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.AssemblyInfoInputs.cache
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.AssemblyInfo.cs
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.csproj.CoreCompileInputs.cache
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.sourcelink.json
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.dll
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\refint\BookingTrip.DAL.dll
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.pdb
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\BookingTrip.DAL.genruntimeconfig.cache
+C:\Users\welcome\source\repos\BookingTrip\BookingTrip.DAL\obj\Debug\net8.0\ref\BookingTrip.DAL.dll

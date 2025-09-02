@@ -1,4 +1,5 @@
-﻿using BookingTrip.PL.Dtos;
+﻿using BookingTrip.BLL.Interfaces.Services;
+using BookingTrip.PL.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingTrip.PL.Controllers
@@ -13,12 +14,14 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpGet]
+        // هذا الإجراء يعرض نموذجًا للسائق لنشر رحلة جديدة.
         public IActionResult PublishTrip()
         {
             return View();
         }
 
         [HttpPost]
+        // هذا الإجراء يتعامل مع بيانات نموذج نشر الرحلة، يقوم بإنشاء رحلة جديدة وحفظها في قاعدة البيانات.
         public async Task<IActionResult> PublishTrip(TripPublishDTO model)
         {
             if (ModelState.IsValid)
@@ -46,6 +49,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpGet]
+        // هذا الإجراء يعرض قائمة بجميع الرحلات التي قام بها سائق معين.
         public async Task<IActionResult> MyTrips(int driverId)
         {
             var trips = await _tripService.GetDriverTripsAsync(driverId);
@@ -53,6 +57,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يقوم بتغيير حالة الرحلة إلى "قيد التقدم" (InProgress).
         public async Task<IActionResult> StartTrip(int tripId)
         {
             try
@@ -68,6 +73,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يسمح للسائق بقبول طلب حجز من راكب في منتصف الطريق.
         public async Task<IActionResult> AcceptMidRoutePickup(int tripId, string pickupLocation, string dropoffLocation)
         {
             try

@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+    // Relationship: Driver has a one-to-one relationship with User.
+    // Each Driver is a single user in the system.
+    // Relationship: Driver has a one-to-many relationship with Trip.
+    // Each driver can create multiple trips.
     public class Driver
     {
         [Key]

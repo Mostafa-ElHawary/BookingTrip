@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookingTrip.BLL.Interfaces;
+using BookingTrip.BLL.Interfaces.Services;
 using BookingTrip.DAL.Entities;
+using BookingTrip.PL.Dtos;
 
 namespace BookingTrip.BLL.Services
 {

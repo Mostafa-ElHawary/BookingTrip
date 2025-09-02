@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+    // Relationship: Payment has a one-to-one relationship with Booking.
+    // Each payment is associated with a single booking.
     public enum PaymentStatus
     {
         Pending,

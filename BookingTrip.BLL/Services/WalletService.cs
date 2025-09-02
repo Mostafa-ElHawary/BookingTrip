@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookingTrip.BLL.Interfaces;
+using BookingTrip.BLL.Interfaces.Services;
 
 namespace BookingTrip.BLL.Services
 {
@@ -49,3 +50,5 @@ namespace BookingTrip.BLL.Services
             return userWallet.Balance;
 
         }
+    }
+}

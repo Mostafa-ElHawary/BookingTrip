@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+    // Relationship: Wallet has a one-to-one relationship with User.
+    // Each wallet belongs to only one User.
     public class Wallet
     {
         [Key]

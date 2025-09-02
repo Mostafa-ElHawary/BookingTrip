@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+    // Relationship: Trip has a many-to-one relationship with Driver.
+    // Each trip is created by a single driver.
+    // Relationship: Trip has a one-to-many relationship with Booking.
+    // Each trip can contain multiple Bookings.
     public enum TripStatus
     {
         Scheduled,

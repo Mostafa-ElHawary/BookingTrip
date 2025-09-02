@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+    // Relationship: User is the central point from which relationships branch out.
+    // Relationship: User has a one-to-one relationship with Driver.
+    // Relationship: User has a one-to-one relationship with Rider.
+    // Relationship: User has a one-to-many relationship with Notification.
+    // Relationship: User has a one-to-one relationship with Wallet.
     public enum UserRole
     {
         Admin,

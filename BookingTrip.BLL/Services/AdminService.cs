@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookingTrip.BLL.Interfaces;
+using BookingTrip.BLL.Interfaces.Services;
+using BookingTrip.PL.Dtos;
 
 namespace BookingTrip.BLL.Services
 {
@@ -44,7 +46,7 @@ namespace BookingTrip.BLL.Services
             return users.Select(u => new UserResponseDTO
             {
                 Id = u.Id,
-                Username = u.UserName,
+                Username = u.Username,
                 Email = u.Email,
                 Role = u.Role,
                 IsActive = u.IsActive
@@ -66,7 +68,7 @@ namespace BookingTrip.BLL.Services
             return new UserResponseDTO
             {
                 Id = user.Id,
-                Username = user.UserName,
+                Username = user.Username,
                 Email = user.Email,
                 Role = user.Role,
                 IsActive = user.IsActive
@@ -88,7 +90,7 @@ namespace BookingTrip.BLL.Services
             return new UserResponseDTO
             {
                 Id = user.Id,
-                Username = user.UserName,
+                Username = user.Username,
                 Email = user.Email,
                 Role = user.Role,
                 IsActive = user.IsActive

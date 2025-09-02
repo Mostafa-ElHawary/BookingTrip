@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+    // Relationship: A Notification has a many-to-one relationship with a User.
+    // Each notification belongs to a single user, and a user can have multiple notifications.
     public enum NotificationType
     {
         NewTrip,

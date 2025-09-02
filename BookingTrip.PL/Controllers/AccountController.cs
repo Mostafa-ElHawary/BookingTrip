@@ -1,4 +1,5 @@
-﻿using BookingTrip.PL.Dtos;
+﻿using BookingTrip.BLL.Interfaces.Services;
+using BookingTrip.PL.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingTrip.PL.Controllers
@@ -13,12 +14,14 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpGet]
+        // هذا الإجراء يعرض صفحة التسجيل للمستخدم
         public IActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
+        // هذا الإجراء يتعامل مع بيانات نموذج التسجيل، يقوم بإنشاء مستخدم جديد ويحفظه في قاعدة البيانات.
         public async Task<IActionResult> Register(UserRegisterDTO model)
         {
             if (ModelState.IsValid)
@@ -33,7 +36,7 @@ namespace BookingTrip.PL.Controllers
                         Role = model.Role
                     };
                     var user = await _userService.RegisterUserAsync(userDto);
-                    // Optionally sign in the user after registration
+                    // يمكنك اختيار تسجيل دخول المستخدم تلقائيًا بعد التسجيل
                     return RedirectToAction("Login");
                 }
                 catch (Exception ex)
@@ -45,12 +48,14 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpGet]
+        // هذا الإجراء يعرض صفحة تسجيل الدخول للمستخدم
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
+        // هذا الإجراء يتعامل مع بيانات نموذج تسجيل الدخول، يقوم بالتحقق من صحة بيانات المستخدم وتسجيل دخوله.
         public async Task<IActionResult> Login(UserLoginDTO model)
         {
             if (ModelState.IsValid)
@@ -58,7 +63,7 @@ namespace BookingTrip.PL.Controllers
                 try
                 {
                     var user = await _userService.LoginUserAsync(model.Email, model.Password);
-                    // Implement ASP.NET Core Identity sign-in here
+                    // هنا يتم تنفيذ عملية تسجيل الدخول باستخدام ASP.NET Core Identity
                     return RedirectToAction("Index", "Home");
                 }
                 catch (Exception ex)
@@ -70,9 +75,10 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يقوم بتسجيل خروج المستخدم من النظام.
         public async Task<IActionResult> Logout()
         {
-            // Implement ASP.NET Core Identity sign-out here
+            // هنا يتم تنفيذ عملية تسجيل الخروج باستخدام ASP.NET Core Identity
             return RedirectToAction("Login");
         }
     }

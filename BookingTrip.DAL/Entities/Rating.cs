@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+    // Relationship: Rating has a one-to-one relationship with Booking.
+    // Each rating is for a specific Booking.
     public class Rating
     {
         [Key]

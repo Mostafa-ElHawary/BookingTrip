@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookingTrip.BLL.Interfaces.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookingTrip.PL.Controllers
 {
@@ -14,6 +15,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpGet]
+        // هذا الإجراء يعرض لوحة تحكم المسؤول ويجلب قائمة بجميع المستخدمين.
         public async Task<IActionResult> Index()
         {
             var users = await _adminService.GetAllUsersAsync();
@@ -21,6 +23,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يستخدم لتفعيل أو إلغاء تفعيل حساب سائق.
         public async Task<IActionResult> VerifyDriver(int driverId, bool isVerified)
         {
             try
@@ -36,6 +39,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يستخدم لحظر مستخدم معين ومنعه من الوصول إلى النظام.
         public async Task<IActionResult> BlockUser(int userId)
         {
             try
@@ -51,6 +55,7 @@ namespace BookingTrip.PL.Controllers
         }
 
         [HttpPost]
+        // هذا الإجراء يستخدم لتعطيل حساب مستخدم معين.
         public async Task<IActionResult> DeactivateUser(int userId)
         {
             try

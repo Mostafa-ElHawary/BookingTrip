@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+    // Relationship: Rider has a one-to-one relationship with User.
+    // Each Rider is a single user in the system.
+    // Relationship: Rider has a one-to-many relationship with Booking.
+    // Each rider can make multiple Bookings.
     public class Rider
     {
         [Key]

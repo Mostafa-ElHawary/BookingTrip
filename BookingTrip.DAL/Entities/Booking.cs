@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookingTrip.DAL.Entities
 {
+
     public enum BookingStatus
     {
         Pending,
@@ -23,10 +24,14 @@ namespace BookingTrip.DAL.Entities
 
         [Required]
         public int TripId { get; set; }
+        // لها علاقة M : 1  .
+        // كل حجز ينتمي لرحلة واحدة، والرحلة يمكن أن تحتوي على عدة حجوزات.
         public Trip Trip { get; set; }
 
         [Required]
         public int RiderId { get; set; }
+        // لها علاقة M : 1  .
+        // كل حجز يتم بواسطة راكب واحد، والراكب يمكنه عمل عدة حجوزات.
         public Rider Rider { get; set; }
 
         [Required]
@@ -43,6 +48,9 @@ namespace BookingTrip.DAL.Entities
         public BookingStatus Status { get; set; } = BookingStatus.Pending;
 
         // Navigation properties
+
+        //  Booking 1 : 1 Payment.
+        // كل حجز يمكن أن يكون له عملية دفع واحدة فقط.
         public Payment Payment { get; set; }
         public Rating Rating { get; set; }
     }
